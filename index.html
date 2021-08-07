@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./index.js" defer></script>
+    <script
+      src="https://canvasjs.com/assets/script/canvasjs.min.js"
+      defer
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .loader-container,
+      .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      #btnGenerateChart {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+      }
+
+      /* Safari */
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="container">
+    <div>
+      <div class="input-container">
+        <div>
+          <label for="number">Enter number to generate Chart</label>
+          <input type="number" name="number" id="number" autocomplete="off" />
+        </div>
+        <br />
+        <div>
+          <button id="btnGenerateChart">Generate Chart</button>
+        </div>
+      </div>
+      <div
+        class="chart-container"
+        id="chartContainer"
+        style="height: 370px; width: 100%"
+      ></div>
+    </div>
+  </body>
+</html>
